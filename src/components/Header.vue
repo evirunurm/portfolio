@@ -157,5 +157,23 @@ hr {
 	left: 100%;
 }
 
+@media (max-width: 600px) {
+	.about-li + .blotter {
+		left: 0;
+		transform: translateX(-25%);
+	}
+
+	.projects-li + .blotter {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.contact-li + .blotter {
+		left: 100%;
+		transform: translateX(-75%);
+	}
+
+}
+
 
 </style>
