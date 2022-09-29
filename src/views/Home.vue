@@ -82,11 +82,14 @@ export default {
 			immediate: true,
 			deep: true,
 			handler() {
-				if (this.event) {
-					let angle = this.angleBetweenPointsInDegrees(0.5, 0.5, this.event.clientX, this.event.clientY - 200);
-					let blur = Math.min(0.1, this.distanceBetweenPoints(0.5, 0.5, this.event.clientX - 300, this.event.clientY - 200) / 4000);
-					this.mainBlotterMaterial.material.uniforms.uRotation.value = angle;
-					this.mainBlotterMaterial.material.uniforms.uOffset.value = blur;
+				if (this.event && this.mainBlotterMaterial) {
+					let angle = this.angleBetweenPointsInDegrees(0.5, 0.5, this.event.clientX, this.event.clientY - 500);
+					let blur = Math.min(0.1, this.distanceBetweenPoints(0.5, 0.5, this.event.clientX - 300, this.event.clientY - 500) / 4000);
+					// This filters all events that occur before the material is loaded.
+					if (this.mainBlotterMaterial.material.uniforms && this.mainBlotterMaterial.material.uniforms) {
+						this.mainBlotterMaterial.material.uniforms.uRotation.value = angle;
+						this.mainBlotterMaterial.material.uniforms.uOffset.value = blur;
+					}
 				}
 
 			}
@@ -101,7 +104,7 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 0.75rem;
+	margin: 4rem;
 }
 
 section {
@@ -130,4 +133,9 @@ section {
 }
 
 
+@media (max-width: 600px) {
+	main {
+		margin: 1.75rem;
+	}
+}
 </style>

@@ -1,22 +1,25 @@
 <template >
-	<div class="noise">
-
-	</div>
-	<Nav></Nav>
-	<router-view :event="moveEvent">
-	</router-view>
+	<div class="noise" />
+	<Socials />
+	<Footer />
+	<Nav />
+	<router-view :event="moveEvent" />
 </template>
 
 <script lang="ts">
 import Nav from "./components/Header.vue"
+import Socials from "./components/Socials.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
 	name: "App",
 	components: {
+		Footer,
+		Socials,
 		Nav
 	},
 	mounted() {
-		document.onmousemove = this.moveName;
+		document.body.onmousemove = this.moveName;
 	},
 	data() {
 		return {

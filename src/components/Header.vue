@@ -7,7 +7,7 @@
 		<nav class="nav">
 			<ul class="nav-ul">
 				<li class="about-li">
-					<router-link to="/">ABOUT</router-link>
+					<router-link to="/about">ABOUT</router-link>
 				</li>
 				<div class="blotter" ref="blotter-about"></div>
 
@@ -31,9 +31,6 @@
 </template>
 
 <script lang="ts">
-
-// import VueBlotter from "vue-blotter";
-
 export default {
 	name: "Nav",
 	components: {
@@ -79,7 +76,7 @@ export default {
 /* GENERAL */
 header {
 	width: 100%;
-	padding: 0.75em;
+	padding: 1.75em;
 }
 
 hr {
