@@ -1,0 +1,44 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.group {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+
+.groupTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.skill {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.skill::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-border);
+  font-size: 0.8rem;
+  top: 2px;
+}
