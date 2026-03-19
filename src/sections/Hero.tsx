@@ -1,3 +1,4 @@
+import { Button } from '@evirunurm/thockitty-ds'
 import styles from './Hero.module.css'
 
 export default function Hero() {
@@ -11,12 +12,18 @@ export default function Hero() {
           I build clean, performant web experiences — from idea to deployment.
         </p>
         <div className={styles.actions}>
-          <a href="#projects" className={styles.btnPrimary}>
+          <Button
+            variant="on-black"
+            onPress={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             View Work
-          </a>
-          <a href="#contact" className={styles.btnOutline}>
+          </Button>
+          <Button
+            variant="on-white"
+            onPress={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Get in Touch
-          </a>
+          </Button>
         </div>
       </div>
     </section>

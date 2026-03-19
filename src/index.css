@@ -5,7 +5,7 @@
 }
 
 :root {
-  --color-bg: #0f0f0f;
+  --color-bg: var(--foundation-color-base-black, #0f0f0f);
   --color-surface: #1a1a1a;
   --color-border: #2a2a2a;
   --color-accent: #6c63ff;
